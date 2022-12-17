@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ROBOT_TALK_1.ogg-3233135fae446769f8f2fa5d30281cca.oggstr"
+
+[deps]
+
+source_file="res://Sound/ROBOT_TALK_1.ogg"
+dest_files=[ "res://.import/ROBOT_TALK_1.ogg-3233135fae446769f8f2fa5d30281cca.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

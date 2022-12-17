@@ -1,0 +1,69 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=23 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "explode"
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "walk_east"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "walk_north"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "walk_south"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "walk_west"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[resource]
+states/explode/node = SubResource( 17 )
+states/explode/position = Vector2( 22, 242.009 )
+states/idle/node = SubResource( 1 )
+states/idle/position = Vector2( -6, 638 )
+states/walk_east/node = SubResource( 2 )
+states/walk_east/position = Vector2( 394, 147 )
+states/walk_north/node = SubResource( 3 )
+states/walk_north/position = Vector2( 721, 147 )
+states/walk_south/node = SubResource( 4 )
+states/walk_south/position = Vector2( 837, 487 )
+states/walk_west/node = SubResource( 14 )
+states/walk_west/position = Vector2( 91, 106 )
+transitions = [ "idle", "walk_east", SubResource( 5 ), "idle", "walk_south", SubResource( 6 ), "idle", "walk_north", SubResource( 7 ), "walk_east", "walk_north", SubResource( 8 ), "walk_south", "walk_north", SubResource( 9 ), "walk_south", "walk_east", SubResource( 10 ), "walk_east", "walk_south", SubResource( 11 ), "walk_north", "walk_east", SubResource( 12 ), "walk_north", "walk_south", SubResource( 13 ), "walk_east", "walk_west", SubResource( 15 ), "walk_west", "walk_east", SubResource( 16 ), "walk_east", "explode", SubResource( 18 ), "walk_west", "explode", SubResource( 19 ), "walk_north", "explode", SubResource( 20 ), "walk_south", "explode", SubResource( 21 ), "idle", "explode", SubResource( 22 ) ]
+start_node = "idle"
+end_node = "explode"
+graph_offset = Vector2( -506, 27.0089 )

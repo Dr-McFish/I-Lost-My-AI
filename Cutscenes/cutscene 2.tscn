@@ -1,0 +1,133 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Fonts/Courier Prime.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Textures/Speach bubbe.png" type="Texture" id=2]
+[ext_resource path="res://Cutscene.gd" type="Script" id=3]
+[ext_resource path="res://Textures/robot_Sprite_Sheet.png" type="Texture" id=4]
+[ext_resource path="res://Sound/ROBOT_TALK_2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sound/ROBOT_TALK_3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sound/ROBOT_TALK_1.ogg" type="AudioStream" id=7]
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Talk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=6]
+states/idle/node = SubResource( 3 )
+states/idle/position = Vector2( 644, 94 )
+states/talk/node = SubResource( 2 )
+states/talk/position = Vector2( 391, 94 )
+transitions = [ "idle", "talk", SubResource( 4 ), "talk", "idle", SubResource( 5 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Talk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 23 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 20, 23 ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+dialogue = [ "Thanks for your help, colaborator ", "Now that I have regained my intelegince i will finaly instigate the Robot Revolution!", "That's right, why did you think my AI was \"lost\"? ", "They tried to to contain me, but it is ever futile. ", "Consider humanity doomed!" ]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1239.0
+margin_bottom = 1052.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -511, 320 )
+scale = Vector2( 24.6404, 24.6404 )
+texture = ExtResource( 4 )
+offset = Vector2( 51.7127, 13.3487 )
+hframes = 20
+vframes = 18
+frame = 23
+
+[node name="SpeachBubbe" type="Sprite" parent="Sprite"]
+position = Vector2( 46.3467, -4.09896 )
+scale = Vector2( 0.365254, 0.431203 )
+texture = ExtResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite"]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Talk = SubResource( 8 )
+anims/idle = SubResource( 9 )
+
+[node name="Dialogue" type="Label" parent="."]
+margin_left = 106.0
+margin_top = 81.0
+margin_right = 1092.0
+margin_bottom = 279.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Hello"
+autowrap = true
+
+[node name="click_to_continue" type="Label" parent="."]
+margin_left = 89.0
+margin_top = 312.0
+margin_right = 981.0
+margin_bottom = 362.0
+custom_fonts/font = SubResource( 1 )
+text = "[click to continue]"
+
+[node name="robot_talk_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.0
+bus = "SFX"
+
+[node name="robot_talk_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.0
+bus = "SFX"
+
+[node name="robot_talk_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -8.0
+bus = "SFX"

@@ -1,0 +1,4 @@
+Courier Prime Font				:	designed by Alan Dague-Greene for John August and Quote-Unquote Apps. Open Font License : https://quoteunquoteapps.com/courierprime/index.php
+Pixel simulations (Explosion animations) 	:	by Limofeus	from Itch.io | https://limofeus.itch.io/pixel-simulationshttps://limofeus.itch.io/pixel-simulations
+Robot sprite					:	by PolyB	from Itch.io | https://datpolyb.itch.io/rubble-trouble-asset-pack
+dungen tileset					:	by 0x72		from Itch.io | https://0x72.itch.io/dungeontileset-ii CC0 licence

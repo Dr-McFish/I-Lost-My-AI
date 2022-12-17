@@ -1,0 +1,16 @@
+# from www.github.com/github/gitignore/blob/main/Godot.gitignore
+# Thanks guys!
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+exports/
+
+# Imported translations (automaticly generated freom CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+
